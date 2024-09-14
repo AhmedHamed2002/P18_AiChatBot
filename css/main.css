@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: rgb(36, 36, 36);
+    font-family: "Roboto", sans-serif;;
+}
+
+header{
+    width: 80%;
+    height: 120px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding-top: 40px;
+
+    h1{
+        margin: 0px auto;
+        width: fit-content;
+        background:linear-gradient(to right , rgb(73, 130, 234) , rgb(193, 105, 102)); 
+        background-clip: text;
+        color: transparent;
+        font-size: 50px;
+    }
+
+    p{
+        font-family: "Playwrite CU", system-ui;
+        color: antiquewhite;
+        text-transform: capitalize;
+    }
+}
+
+main{
+    width: 100%;
+    margin: 30px auto;
+    padding-top: 30px;
+
+    .mainText{
+        width: 80%;
+        margin: auto;
+        h2{
+            color: whitesmoke;
+            font-size: 40px;
+            font-weight: 400;
+
+            span{
+                color: goldenrod;
+            }
+        }
+        p{
+            color: #777;
+            font-size: 27px;
+        }
+    }
+
+    .chatList{
+        width: 80%;
+        margin: auto;
+        padding-block: 40px;
+        margin-block: 30px;
+
+        .message{
+            padding: 15px 20px;
+            background-color: #2c2b2bb7;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            
+            .user_message{
+                width: 100%;
+                display: flex;
+                padding-top: 5px;
+                padding-bottom: 20px;
+
+                .image{
+                    width: 40px;
+                    margin-right: 20px;
+                    border-radius: 50%;
+                    img{
+                        width: 40px;
+                        height: 40px;  
+                        border-radius: 50%;
+                    }
+                }
+    
+                .user_text{
+                    color: rgb(175, 134, 119);
+                }
+            }
+    
+            .Ai_message{
+                width: 100%;
+                display: flex;
+                padding-block: 5px;
+
+                .image{
+                    width: 40px;
+                    margin-right: 20px;
+                    border-radius: 50%;
+                    img{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                    }
+                }
+    
+                .Ai_text{
+                    color: rgb(109, 145, 179);
+                    white-space: pre-wrap;
+                }
+
+                .loading{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 10px;
+                    div{
+                        width: 100%;
+                        height: 10px;
+                        background: linear-gradient(to  right ,  rgb(73, 130, 234) , rgb(47, 46, 46)  , rgb(73, 130, 234));
+                        background-position: -800px 0px ;
+                        animation:  load 3s linear infinite;
+
+                        &:last-child{
+                            width: 70%;
+                        }
+                    }
+                }
+            }
+            span{
+                position: relative;
+                left: 95% ;
+                top: 10px; 
+                color: #777;
+                cursor: pointer;
+                transition: 0.3s;
+    
+                &:hover{
+                    color: white;
+                }
+            }
+            &.Done .Ai_message .loading{
+                display: none;
+            }
+        }
+    }
+
+    .send{
+        background-color: rgb(36, 36, 36);
+        position: fixed;
+        bottom: 0px;
+        height: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 20px;
+
+        input{
+            width: 70%;
+            padding: 10px 20px;
+            border-radius:20px ;
+            border: none;
+            outline: none;
+            background-color: rgb(73, 71, 71);
+            color: white;
+            caret-color: rgb(80, 128, 225);
+            transition: 0.3s ease;
+
+            &:hover , &:focus{
+                background-color: rgb(97, 99, 99);
+            }
+        }
+
+        button{
+            background-color: transparent;
+            border: none;
+            color: #c7c5c5;;
+            position: relative;
+            right: 45px;
+            transition: 0.3s;
+            cursor: pointer;
+            
+            &:hover{
+                color: white;
+            }
+        }
+    }
+}
+
+
+@keyframes load{
+    0%{
+        background-position: -800px 0px ;
+    }
+    100%{
+        background-position: 800px 0px;
+    }
+}
